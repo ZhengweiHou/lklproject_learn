@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+	debug="false">
+	<!-- 控制台 -->
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%-5p [%t] %d{YYYY-MM-DD HH:mm:ss:SSS} %n 
+                                 %c{1}: %m%n" />
+		</layout>
+	</appender>
+	<!-- 日志插入数据库 -->
+	<!-- create table log4j( Date varchar (100), Logger varchar (1000), Priority 
+		varchar (100), Thread varchar (30), Message varchar (1000)); -->
+	<appender name="JDBC" class="org.apache.log4j.jdbc.JDBCAppender">
+		<param name="URL" value="jdbc:oracle:thin:@127.0.0.1:1521:ORCL" />
+		<param name="user" value="scott" />
+		<param name="password" value="gang2127" />
+		<param name="driver" value="oracle.jdbc.driver.OracleDriver" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="insert into log4j(createdate,thread_,level_,class_,message) values(\'%d\',\'%t\',\'%-5p\',\'%c\',\'%m\')" />
+		</layout>
+	</appender>
+	<!-- 生成日志文件 -->
+	<appender name="FILE" class="org.apache.log4j.RollingFileAppender">
+		<param name="file" value="D:/staty/example.log" />
+		<param name="append" value="true" />
+		<param name="maxFileSize" value="10KB" />
+		<param name="maxBackupIndex" value="10" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %-5p %C{6} (%F:%L) - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- 下面是打印mybatis语句的配置 -->
+	<logger name="com.ibatis" additivity="true">
+		<level value="DEBUG" />
+	</logger>
+	<logger name="java.sql" additivity="true">
+		<level value="DEBUG" />
+	</logger>
+	<logger name="org" additivity="true">
+		<level value="INFO" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	<root>
+		<level value="ERROR" />
+		<appender-ref ref="FILE" />
+		<appender-ref ref="JDBC"/>
+	</root>
+</log4j:configuration>

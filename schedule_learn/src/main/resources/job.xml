@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	<!-- demo1 start -->
+    <bean id="DemoJobTask" class="com.hzw.java_learn.schedule_learn.DemoJobTask"/>    
+    
+    <bean id="job_demo" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="DemoJobTask"/>         
+        <property name="targetMethod" value="doJob"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+    
+    <bean id="demoTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="job_demo" />
+        <property name="cronExpression" value="0/5 * * * * ?" />
+    </bean>
+    <!-- demo1 end -->
+</beans>

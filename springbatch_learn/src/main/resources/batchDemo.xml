@@ -23,7 +23,8 @@
 		</batch:step>
 
 	</batch:job>
-
+	
+    
 	<bean id="jobRepository"
 		class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean">
 		<property name="transactionManager" ref="transactionManager" />

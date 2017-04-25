@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.hzw.learn</groupId>
@@ -18,7 +17,8 @@
 		<module>mavenplugintest</module>
 		<module>activity_learn</module>
 		<module>basedao</module>
-	</modules>
+    <module>dubbo_learn</module>
+  </modules>
 
 	<properties>
 
@@ -143,7 +143,7 @@
 				<version>${logback.version}</version>
 			</dependency>
 
-			<!-- 收集logback产生的日�? -->
+			<!-- 收集logback产生的日�? -->
 			<dependency>
 				<groupId>net.logstash.logback</groupId>
 				<artifactId>logstash-logback-encoder</artifactId>

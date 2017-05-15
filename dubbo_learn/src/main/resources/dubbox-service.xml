@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:ares="http://code.allinfinance.com/schema/ares"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+							http://www.springframework.org/schema/beans/spring-beans.xsd
+							http://code.allinfinance.com/schema/ares
+							http://code.allinfinance.com/schema/ares/ares.xsd
+							http://code.alibabatech.com/schema/dubbo
+							http://code.alibabatech.com/schema/dubbo/dubbo.xsd"> -->
+							
+							
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd 
+	    http://www.springframework.org/schema/context 
+	    http://www.springframework.org/schema/context/spring-context.xsd 
+	    http://code.alibabatech.com/schema/dubbo
+		http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	default-lazy-init="true">							
+							
+							
+	<bean name="propertiesManage"
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:/conf/*.properties</value>
+            </list>
+        </property>
+    </bean>
+
+	<!-- 开启自动注入 -->
+	<context:annotation-config />
+
+	<!-- 提供方应用信息，用于计算依赖关系 -->
+	<dubbo:application name="dubbo_learn_dubboService" />
+	
+	<!-- 使用multicast广播注册中心暴露服务地址 -->
+	<dubbo:registry address="${zookeeper_address}"
+		protocol="zookeeper" group="${zk_group}" />
+		
+	<!-- 用dubbo协议在20880端口暴露服务 -->
+	<dubbo:protocol name="dubbo" port="${dubbo_port}" />
+	<!-- 传输层信息配置 -->
+<!-- 	<dubbo:provider threads="3" retries="0" timeout="3000"
+		filter="setOrg" /> -->
+
+	<dubbo:service version="1.0.0"
+		interface="com.hzw.java_learn.dubbo.service.DubboServiceDemo" ref="dubboServiceDemoImpl" />
+     
+     
+    <context:component-scan base-package="com.hzw.java_learn.dubbo" />
+</beans>

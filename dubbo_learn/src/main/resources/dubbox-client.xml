@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+							http://www.springframework.org/schema/beans/spring-beans.xsd
+							http://code.alibabatech.com/schema/dubbo
+							http://code.alibabatech.com/schema/dubbo/dubbo.xsd"> -->
+							
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd 
+	    http://www.springframework.org/schema/context 
+	    http://www.springframework.org/schema/context/spring-context.xsd 
+	    http://code.alibabatech.com/schema/dubbo
+		http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	default-lazy-init="true">
+
+	<bean name="propertiesManage"
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:/conf/*.properties</value>
+            </list>
+        </property>
+    </bean>
+
+	<!-- 开启自动注入 -->
+	<context:annotation-config />
+	
+	<context:component-scan base-package="com.hzw.java_learn.dubbo" />
+	
+	
+	<!--消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
+	<dubbo:application name="dubbo_learn_dubboClient"></dubbo:application> 
+
+	<dubbo:consumer retries="0" check="false" timeout="3000"/>
+	<dubbo:registry id="hzwRegistry" address="${zookeeper_address}"
+		protocol="zookeeper" group="${zk_group}" />
+	
+	<!-- DubboDemo -->
+	<dubbo:reference
+		interface="com.hzw.java_learn.dubbo.service.DubboServiceDemo"
+		version="1.0.0" 
+		check="false" 
+		id="dubboServiceDemoClient" />
+
+    
+    
+    
+
+</beans>

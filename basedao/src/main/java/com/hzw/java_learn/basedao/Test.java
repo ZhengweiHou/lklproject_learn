@@ -3,8 +3,17 @@ package com.hzw.java_learn.basedao;
 public class Test {
 	public static void main(String[] args) {
 		
-		String a = null;
+//		RunTest runTest = new RunTest();
+//		
+//		runTest.start();
 		
-		System.out.println("asfd".equals(a));
+		
+		String a = "    ";
+		System.out.println(a.trim().length());
+		
+		
 	}
+	
 }
+
+

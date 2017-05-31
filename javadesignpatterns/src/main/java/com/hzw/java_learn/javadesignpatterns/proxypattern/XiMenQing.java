@@ -14,5 +14,12 @@ public class XiMenQing {
 		// 然后西门庆就说，我要和潘金莲happy，然后王婆就安排了西门庆丢筷子的那出戏:
 		wangPo.makeEyesWithMan(); // 看到没，虽然表面上时王婆在做，实际上爽的是潘金莲
 		wangPo.happyWithMan();
+		
+		
+		JiaShi jiaShi = new JiaShi();
+		wangPo = new WangPo(jiaShi); // 王婆作为贾氏的代理
+		wangPo.makeEyesWithMan();
+		wangPo.happyWithMan();
+		
 	}
 }

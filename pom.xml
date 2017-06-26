@@ -19,6 +19,7 @@
 		<module>basedao</module>
 		<module>dubbo_learn</module>
     <module>javadesignpatterns</module>
+    <module>otherTest</module>
   </modules>
 
 	<properties>

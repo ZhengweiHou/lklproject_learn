@@ -1,6 +1,6 @@
 Java设计模式
 
-第 1 章  策略模式【STRATEGY PATTERN 】\r
+第 1 章  策略模式【STRATEGY PATTERN 】/r
 第 2 章  代理模式【PROXY PATTERN 】
 第 3 章  单例模式【SINGLETON PATTERN 】
 第 4 章  多例模式【MULTITION PATTERN 】

@@ -3,7 +3,7 @@ proxypattern --- 代理模式
 singletonpattern --- 单例模式
 multition_pattern ---多例模式
 factory_method_pattern --- 工厂方法模式
-
+abstract_factory_pattern --- 抽象工厂模式
 
 
 

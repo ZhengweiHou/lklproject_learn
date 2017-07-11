@@ -10,15 +10,19 @@ import org.springframework.core.task.SimpleAsyncTaskExecutor;
 
 public class Main {
 	public static void main(String[] args) {
-		ApplicationContext  context = new ClassPathXmlApplicationContext("batchDemo.xml");
+			
+		String conf = "spring-context.xml";
+//		String conf = "batchDemoDB.xml";
 		
-       SimpleJobLauncher launcher = new SimpleJobLauncher();  
-       launcher.setJobRepository((JobRepository) context.getBean("jobRepository"));  
-       launcher.setTaskExecutor(new SimpleAsyncTaskExecutor());  
-       try {  
-            launcher.run((Job) context.getBean("job1"), new JobParameters());  
-       } catch (Exception e) {  
-       e.printStackTrace();  
-       }  
+		ApplicationContext  context = new ClassPathXmlApplicationContext(conf);
+		
+		SimpleJobLauncher launcher = new SimpleJobLauncher();  
+		launcher.setJobRepository((JobRepository) context.getBean("jobRepository"));  
+		launcher.setTaskExecutor(new SimpleAsyncTaskExecutor());  
+		try {  
+			launcher.run((Job) context.getBean("job1"), new JobParameters());  
+		} catch (Exception e) {  
+			e.printStackTrace();  
+		}  
 	}
 }

@@ -20,7 +20,7 @@
         </activiti:executionListener>
       </extensionElements>
     </sequenceFlow>
-    <serviceTask id="serviceTask2" name="ServiceTask2" activiti:delegateExpression="${serviceTask2}"></serviceTask>
+    <serviceTask id="serviceTask2" name="ServiceTask2" activiti:expression="#{serviceTask2.showVar(var)}"></serviceTask>
     <sequenceFlow id="flow3" sourceRef="serviceTask2" targetRef="endevent1"></sequenceFlow>
   </process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_myProcess1">

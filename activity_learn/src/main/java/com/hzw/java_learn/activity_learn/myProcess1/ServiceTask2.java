@@ -11,5 +11,10 @@ public class ServiceTask2 implements JavaDelegate{
 		System.out.println("serviceTask2 --- do     var="+var);
 		execution.setVariable("var", "serviceTask2");
 	}
+	
+	public void showVar(String var){
+		
+		System.out.println("serviceTask2 --- showVardo     var="+var);
+	}
 
 }

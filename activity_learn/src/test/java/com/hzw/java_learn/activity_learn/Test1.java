@@ -23,9 +23,6 @@ public class Test1 {
 	@Autowired
 	RuntimeService runtimeService;
 	
-	@Autowired
-	HZWTest hZWTest;
-	
 	@Test
 	public void runTest(){
 		System.out.println("runTest");

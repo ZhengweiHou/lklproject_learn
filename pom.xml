@@ -12,11 +12,11 @@
 
 	<distributionManagement>
 		<snapshotRepository>
-			<id>hzw_learn</id>
+			<id>hzw</id>
 			<url>http://192.168.32.131:8081/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
 		<repository>
-			<id>hzw_learn</id>
+			<id>hzw</id>
 			<url>http://192.168.32.131.120:8081/nexus/content/repositories/releases</url>
 		</repository>
 	</distributionManagement>

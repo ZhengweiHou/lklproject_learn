@@ -22,6 +22,7 @@
 		<module>javadesignpatterns</module>
 		<module>otherTest</module>
 		<module>redis_learn</module>
+		<module>shiro_learn</module>
 	</modules>
 
 	<properties>
@@ -47,6 +48,7 @@
 		<zkclient.version>0.7</zkclient.version>
 		<jedis.version>2.8.2</jedis.version>
 		<redisson.version>2.9.3</redisson.version>
+		<shiro.version>1.2.4</shiro.version>
 	</properties>
 
 
@@ -113,6 +115,28 @@
 				<groupId>org.mybatis</groupId>
 				<artifactId>mybatis-spring</artifactId>
 				<version>${mybatis-spring.version}</version>
+			</dependency>
+			
+			<!-- Shiro -->
+			<dependency>
+	           <groupId>org.apache.shiro</groupId>
+	           <artifactId>shiro-core</artifactId>
+	           <version>${shiro.version}</version>
+	       	</dependency>
+	       	<dependency>
+	           <groupId>org.apache.shiro</groupId>
+	           <artifactId>shiro-spring</artifactId>
+	           <version>${shiro.version}</version>
+	       	</dependency>
+	       	<dependency>
+	           <groupId>org.apache.shiro</groupId>
+	           <artifactId>shiro-web</artifactId>
+	           <version>${shiro.version}</version>
+	       	</dependency>
+	       	<dependency>
+	    		<groupId>org.apache.shiro</groupId>
+	    		<artifactId>shiro-cas</artifactId>
+				<version>${shiro.version}</version>
 			</dependency>
 
 			<!-- 流程引擎 -->

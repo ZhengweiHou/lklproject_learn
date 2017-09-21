@@ -1,12 +1,10 @@
-
+package org.otherTest;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.apache.commons.lang.StringUtils;
 
 /**
  * @ClassName IdentificationCodeUtil
@@ -29,9 +27,9 @@ public class IdentificationCodeUtil {
 	 * @return 如果身份证号码正确，则返回true，否则返回false。
 	 */
 	public static boolean isIdentityCode(String code) {
-		if (StringUtils.isEmpty(code)) {
-			return false;
-		}
+//		if (StringUtils.isEmpty(code)) {
+//			return false;
+//		}
 		String birthDay = "";
 		code = code.trim();
 		// 长度只有15和18两种情况
@@ -172,9 +170,9 @@ public class IdentificationCodeUtil {
 	 * @return 18位身份证号码
 	 */
 	public static String update2eighteen(String code) {
-		if (StringUtils.isEmpty(code)) {
-			return "";
-		}
+//		if (StringUtils.isEmpty(code)) {
+//			return "";
+//		}
 		code = code.trim();
 		if (code.length() != IDENTITYCODE_OLD || !isIdentityCode(code)) {
 			return "";

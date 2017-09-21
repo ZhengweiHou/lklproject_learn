@@ -31,8 +31,8 @@ public class Test1 {
 	@Test
 	public void deployProc(){
 		Deployment deployment = repositoryService.createDeployment()
-		.name("MyProcess1")
-		.addClasspathResource("bpmn/MyProcess1.bpmn")
+		.name("MyProcess2")
+		.addClasspathResource("bpmn/myProcess2/MyProcess2.bpmn")
 		.deploy();
 		System.out.println(deployment.getTenantId());
 		System.out.println(deployment.getId());
@@ -41,7 +41,7 @@ public class Test1 {
 	
 	@Test
 	public void startProc(){
-		runtimeService.startProcessInstanceByKey("myProcess1");
+		runtimeService.startProcessInstanceByKey("myProcess2");
 	}
 
 }

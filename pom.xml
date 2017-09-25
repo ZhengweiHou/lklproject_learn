@@ -22,9 +22,9 @@
 	</distributionManagement>
 	
 	<!-- 配置私服的用户名地址 -->
-	<servers>
+	<!-- <servers>
 	    <server>
-	      <id>hzw-snapshots</id>  <!-- 对应上面仓库ID -->
+	      <id>hzw-snapshots</id> 
 	      <username>admin</username>
 	      <password>admin123</password>
 	    </server>
@@ -34,7 +34,7 @@
 	      <username>admin</username>
 	      <password>admin123</password>
 	    </server>
-	  </servers>
+	  </servers> -->
 
 	<modules>
 		<module>schedule_learn</module>

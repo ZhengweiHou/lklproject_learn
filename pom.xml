@@ -12,14 +12,29 @@
 
 	<distributionManagement>
 		<snapshotRepository>
-			<id>hzw</id>
+			<id>hzw-snapshots</id>
 			<url>http://192.168.32.131:8081/nexus/content/repositories/snapshots</url>
 		</snapshotRepository>
 		<repository>
-			<id>hzw</id>
-			<url>http://192.168.32.131.120:8081/nexus/content/repositories/releases</url>
+			<id>hzw-releases</id>
+			<url>http://192.168.32.131:8081/nexus/content/repositories/releases</url>
 		</repository>
 	</distributionManagement>
+	
+	<!-- 配置私服的用户名地址 -->
+	<servers>
+	    <server>
+	      <id>hzw-snapshots</id>  <!-- 对应上面仓库ID -->
+	      <username>admin</username>
+	      <password>admin123</password>
+	    </server>
+	    
+	    <server>
+	      <id>hzw-releases</id>
+	      <username>admin</username>
+	      <password>admin123</password>
+	    </server>
+	  </servers>
 
 	<modules>
 		<module>schedule_learn</module>

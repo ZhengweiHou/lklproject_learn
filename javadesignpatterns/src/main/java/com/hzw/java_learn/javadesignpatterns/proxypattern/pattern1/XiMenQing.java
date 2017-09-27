@@ -1,4 +1,6 @@
-package com.hzw.java_learn.javadesignpatterns.proxypattern;
+package com.hzw.java_learn.javadesignpatterns.proxypattern.pattern1;
+
+import com.hzw.java_learn.javadesignpatterns.proxypattern.JiaShi;
 
 /**
  * 定义一个西门庆，这人色中饿鬼

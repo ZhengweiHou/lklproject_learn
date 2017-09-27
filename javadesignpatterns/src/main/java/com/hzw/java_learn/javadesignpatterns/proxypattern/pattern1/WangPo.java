@@ -1,4 +1,7 @@
-package com.hzw.java_learn.javadesignpatterns.proxypattern;
+package com.hzw.java_learn.javadesignpatterns.proxypattern.pattern1;
+
+import com.hzw.java_learn.javadesignpatterns.proxypattern.KindWomen;
+import com.hzw.java_learn.javadesignpatterns.proxypattern.PanJinLian;
 
 /**
  * 王婆这个人老聪明了，她太老了，是个男人都看不上， 但是她有智慧有经验呀，她作为一类女人的代理！

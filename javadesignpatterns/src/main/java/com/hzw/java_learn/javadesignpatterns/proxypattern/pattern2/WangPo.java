@@ -19,11 +19,13 @@ public class WangPo implements InvocationHandler {
 		
 		// 真正操作之前可以进行其他处理
 		// TODO do some thing brfore
+		System.out.println("王婆开始传话..");
 		
 		Object returnValue = method.invoke(women, args);
 		
 		// 真正操作之后可以进行其他处理
 		// TODO do some thing after
+		System.out.println("王婆传话结束..");
 		
 		return returnValue;
 	}

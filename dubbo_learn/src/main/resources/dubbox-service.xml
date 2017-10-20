@@ -40,7 +40,7 @@
 	<dubbo:application name="dubbo_learn_dubboService" />
 	
 	<!-- 使用multicast广播注册中心暴露服务地址 -->
-	<dubbo:registry address="${zookeeper_address}"
+	<dubbo:registry id="registry1" address="${zookeeper_address}"
 		protocol="zookeeper" group="${zk_group}" />
 		
 	<!-- 用dubbo协议在20880端口暴露服务 -->
@@ -49,8 +49,11 @@
 <!-- 	<dubbo:provider threads="3" retries="0" timeout="3000"
 		filter="setOrg" /> -->
 
-	<dubbo:service version="1.0.0"
-		interface="com.hzw.java_learn.dubbo.service.DubboServiceDemo" ref="dubboServiceDemoImpl" />
+	<dubbo:service version="A.1.0.0"
+		interface="com.hzw.java_learn.dubbo.service.DubboServiceDemo" ref="AService" />
+		
+	<dubbo:service version="B.1.0.0"
+		interface="com.hzw.java_learn.dubbo.service.DubboServiceDemo" ref="BService" />
      
      
     <context:component-scan base-package="com.hzw.java_learn.dubbo" />

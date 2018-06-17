@@ -51,6 +51,7 @@
 	    <module>rabbitmq_learn</module>
 	    <module>javaalgorithm</module>
     <module>javafoundation</module>
+    <module>lambda_learn</module>
   </modules>
 
 	<properties>
@@ -227,7 +228,7 @@
 				<version>${logback.version}</version>
 			</dependency>
 
-			<!-- 收集logback产生的日�? -->
+			<!-- 收集logback产生的日�?? -->
 			<dependency>
 				<groupId>net.logstash.logback</groupId>
 				<artifactId>logstash-logback-encoder</artifactId>

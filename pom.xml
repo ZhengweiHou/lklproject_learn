@@ -52,6 +52,7 @@
 	    <module>javaalgorithm</module>
     <module>javafoundation</module>
     <module>lambda_learn</module>
+    <module>baselib_learn</module>
   </modules>
 
 	<properties>

@@ -1,8 +1,7 @@
-package com.hzw.java_learn.javafoundation.generic;
+package com.hzw.java_learn.javabase.generic;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Learn1 {

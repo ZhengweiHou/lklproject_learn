@@ -8,9 +8,9 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>com.hzw.learn</groupId>
-  <artifactId>javafoundation</artifactId>
+  <artifactId>javabase</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>javafoundation</name>
+  <name>javabase</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

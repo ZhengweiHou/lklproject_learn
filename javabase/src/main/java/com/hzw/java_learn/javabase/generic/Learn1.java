@@ -7,7 +7,6 @@ import java.util.Arrays;
 public class Learn1 {
 	public static void main(String[] args) {
 		
-		
 		AInt<String> a1 = new AImpl<Integer>();
 		a1.showClass("String");
 		a1.showClass();

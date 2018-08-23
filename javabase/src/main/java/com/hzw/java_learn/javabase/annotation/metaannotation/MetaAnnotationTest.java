@@ -16,11 +16,11 @@ public @interface MetaAnnotationTest {
 }
 
 /*
-一。 @Retention
-	1. RetentionPolicy。SOURCE
-	2. RetentionPolicy。CLASS
-	3. RetentionPolicy。RUNTIME
-二。 @Target
+一. @Retention
+	1. RetentionPolicy.SOURCE
+	2. RetentionPolicy.CLASS
+	3. RetentionPolicy.RUNTIME
+二. @Target
 	ElementType
 	    //Class, interface (including annotation type), or enum declaration
 	    TYPE,

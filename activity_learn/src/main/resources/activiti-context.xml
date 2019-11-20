@@ -27,13 +27,11 @@
         <!-- <property ref="flowEngineIdGenerator" name="idGenerator"></property>  -->
 	</bean>
 	
-<!-- 	<bean id="flowEngineIdGenerator" class="com.allinfinance.ares.workflow.service.AresFlowEngineIdGenerator" /> -->
 	
 	<bean id="processEngine" class="org.activiti.spring.ProcessEngineFactoryBean">
 		<property name="processEngineConfiguration" ref="processEngineConfiguration" />
 	</bean>
 	
-	<!-- <bean id="activiti" class="com.allinfinance.ares.workflow.service.impl.WorkflowApiImpl" /> -->
 
 	<bean id="repositoryService" factory-bean="processEngine" factory-method="getRepositoryService" />
 	<bean id="runtimeService" factory-bean="processEngine" factory-method="getRuntimeService" />
